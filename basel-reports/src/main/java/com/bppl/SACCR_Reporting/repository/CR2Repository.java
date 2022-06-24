@@ -13,7 +13,7 @@ import com.bppl.SACCR_Reporting.model.CR2;
 
 public interface CR2Repository extends CrudRepository<CR2, Integer>{
 
-	
+	//CR1
 	//1a
 	@Query("select sum(EOP_BALANCE_AMT) from CR2 where (STD_PRODUCT_TYPE_CD = 'LOAN' or STD_PRODUCT_TYPE_CD = 'RME') and ACCT_PASTDUE_FLAG = 'Y'")
 	Double LoansDefaultedExposure();
@@ -74,4 +74,24 @@ public interface CR2Repository extends CrudRepository<CR2, Integer>{
 	@Query("select sum(TOT_WRITE_OFF_AMT + COLLECTIVE_PROVISION_AMT +  OTH_PROVISION_AMT) from CR2 where STD_PRODUCT_TYPE_CD = 'LC' or STD_PRODUCT_TYPE_CD = 'GUAR' or STD_PRODUCT_TYPE_CD = 'COMM'")
 	Double OffBalanceAllocatedGeneral();
 	
+	//CR2
+	//13d
+	@Query("select sum(DEF_EXP_PAST_PRD) from CR2 where (STD_PRODUCT_TYPE_CD = 'LOAN' or STD_PRODUCT_TYPE_CD = 'RME' or STD_PRODUCT_TYPE_CD = 'BOND')")
+	Double DefaultedExpenditurePrevPeriod();
+	
+	//14d
+	@Query("select sum(DEF_EXP_CUR_PRD) from CR2 where (STD_PRODUCT_TYPE_CD = 'LOAN' or STD_PRODUCT_TYPE_CD = 'RME' or STD_PRODUCT_TYPE_CD = 'BOND')")
+	Double DefaultedExpenditureCurPeriod();
+	
+	//15d
+	@Query("select sum(EOP_BALANCE_AMT) from CR2 where (STD_PRODUCT_TYPE_CD = 'LOAN' or STD_PRODUCT_TYPE_CD = 'RME' or STD_PRODUCT_TYPE_CD = 'BOND') and RET_TO_NDEFAULT_DT > LST_REP_DT")
+	Double RetToNonDefaulted();
+	
+	//16d
+	@Query("select sum(TOT_WRITE_OFF_AMT) from CR2 where (STD_PRODUCT_TYPE_CD = 'LOAN' or STD_PRODUCT_TYPE_CD = 'RME' or STD_PRODUCT_TYPE_CD = 'BOND')")
+	Double AmountWriteOff();
+	
+	//17d
+	@Query("select sum(OTH_PROVISION_AMT) from CR2 where (STD_PRODUCT_TYPE_CD = 'LOAN' or STD_PRODUCT_TYPE_CD = 'RME' or STD_PRODUCT_TYPE_CD = 'BOND')")
+	Double OtherChanges();
 }

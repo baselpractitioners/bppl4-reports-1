@@ -18,7 +18,7 @@ import com.bppl.SACCR_Reporting.service.ReportingService;
 @Slf4j
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/reporting")
+@RequestMapping("/reports")
 public class ReportingController {
 	
 	@Autowired
@@ -33,8 +33,15 @@ public class ReportingController {
 		return res;
 	}
 	
+	@GetMapping("/CR2")
+	public List<Object> get_CR2() {
+	
+		List<Object> res = reportingService.get_CR2();
+		return res;
+	}
+	
 	// update values is reports_template table
-	@GetMapping("/updateCR1")
+	@PostMapping("/updateCR1")
 	public void updateCR1() {
 		
 		NumberFormat f = NumberFormat.getInstance();
@@ -55,5 +62,19 @@ public class ReportingController {
 			reportingService.updateTableCR1(17, 4 + i, f.format(resLoan.get(i) + resDebt.get(i) + resOffBalance.get(i)));
 		};
 	}
+	
+	@PostMapping("/updateCR2")
+	public void updateCR2() {
+		NumberFormat f = NumberFormat.getInstance();
+		f.setGroupingUsed(false);
 		
+		List<Double> res = new ArrayList<Double>();
+		
+		res = reportingService.calc_cr2();
+		
+		for(Integer i = 0; i < res.size(); i++)
+		{
+			reportingService.updateTableCR2(13 + i, 4, f.format(res.get(i)));
+		};
+	}
 }
