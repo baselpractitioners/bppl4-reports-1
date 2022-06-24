@@ -34,6 +34,12 @@ public class ReportingService {
 		return res;
 	}
 	
+	public List<Object> get_CR2() {
+		List<Object> res = new ArrayList<Object>();
+		reports_template_repository.findByReportName("CR2").forEach(res::add);
+		return res;
+	}
+	
 	public List<Double> get_debt()
 	{
 		List<Double> res = new ArrayList<Double>();
@@ -81,8 +87,27 @@ public class ReportingService {
 		return res;
 	}
 	
+	public List<Double> calc_cr2()
+	{
+		List<Double> res = new ArrayList<Double>();
+		
+		res.add(cr2_repository.DefaultedExpenditurePrevPeriod());
+		res.add(cr2_repository.DefaultedExpenditureCurPeriod());
+		res.add(cr2_repository.RetToNonDefaulted());
+		res.add(cr2_repository.AmountWriteOff());
+		res.add(cr2_repository.OtherChanges());
+		res.add(res.get(0) + res.get(1) - res.get(2) - res.get(3) + res.get(4));
+		
+		return res;
+	}
+	
 	public void updateTableCR1(Integer row, Integer col, String value)
 	{
 		reports_template_repository.updateCR1(row, col, value);
+	}
+	
+	public void updateTableCR2(Integer row, Integer col, String value)
+	{
+		reports_template_repository.updateCR2(row, col, value);
 	}
 }

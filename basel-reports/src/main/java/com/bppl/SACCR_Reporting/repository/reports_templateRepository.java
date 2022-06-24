@@ -21,6 +21,11 @@ public interface reports_templateRepository extends CrudRepository<reports_templ
 	void updateCR1(Integer row, Integer col, String value);
 	
 	@Query("select RowNumber, ColumnNumber, CellValue from reports_template where ReportName = ?1")
-	List<Object> findByReportName(String ReportName);	
-
+	List<Object> findByReportName(String ReportName);
+	
+	@Transactional
+	@Modifying
+	@Query("update reports_template set CellValue = ?3 where ReportName = 'CR2' and RowNumber = ?1 and ColumnNumber = ?2")
+	void updateCR2(Integer row, Integer col, String value);
 }
+
