@@ -27,19 +27,21 @@ public class ReportingService {
 
 
 	
-
+	// all data needed to fill report CR1 [row, col, val]
 	public List<Object> get_CR1() {
 		List<Object> res = new ArrayList<Object>();
 		reports_template_repository.findByReportName("CR1").forEach(res::add);
 		return res;
 	}
 	
+	// all data needed to fill report CR2 [row, col, val]
 	public List<Object> get_CR2() {
 		List<Object> res = new ArrayList<Object>();
 		reports_template_repository.findByReportName("CR2").forEach(res::add);
 		return res;
 	}
 	
+	// intermediate function to get values
 	public List<Double> get_debt()
 	{
 		List<Double> res = new ArrayList<Double>();
@@ -101,11 +103,13 @@ public class ReportingService {
 		return res;
 	}
 	
+	// updates reports_template table with updated aggregates CR1
 	public void updateTableCR1(Integer row, Integer col, String value)
 	{
 		reports_template_repository.updateCR1(row, col, value);
 	}
 	
+	// updates reports_template table with updated aggregates CR1
 	public void updateTableCR2(Integer row, Integer col, String value)
 	{
 		reports_template_repository.updateCR2(row, col, value);

@@ -1,16 +1,10 @@
 package com.bppl.SACCR_Reporting.controllers;
 
-import java.sql.Date;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import com.bppl.SACCR_Reporting.model.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import com.bppl.SACCR_Reporting.service.ReportingService;
@@ -24,8 +18,9 @@ public class ReportingController {
 	@Autowired
 	private ReportingService reportingService;
 
-
-	// team 1 changes
+	// SECTION 1 - get data to fill reports
+	
+	// Contains /reportname for each report
 	@GetMapping("/CR1")
 	public List<Object> get_CR1() {
 	
@@ -40,20 +35,22 @@ public class ReportingController {
 		return res;
 	}
 	
-	// update values is reports_template table
+	// more reports will be added here with /reportname
+	
+	
+	
+	// SECTION 2 - update report data in intermediary table
+	// update values in reports_template [intermediary table] table for report - cr1
 	@PostMapping("/updateCR1")
 	public void updateCR1() {
-		
 		NumberFormat f = NumberFormat.getInstance();
 		f.setGroupingUsed(false);
-		
 		List<Double> resLoan = new ArrayList<Double>();
 		List<Double> resDebt = new ArrayList<Double>();
 		List<Double> resOffBalance = new ArrayList<Double>();
 		resLoan = reportingService.get_loans();
 		resDebt = reportingService.get_debt();
 		resOffBalance = reportingService.get_off_balance();
-
 		for(Integer i = 0; i < resLoan.size(); i++)
 		{
 			reportingService.updateTableCR1(14, 4 + i, f.format(resLoan.get(i)));
@@ -63,6 +60,7 @@ public class ReportingController {
 		};
 	}
 	
+	// update values in reports_template [intermediary table] table for report - cr2
 	@PostMapping("/updateCR2")
 	public void updateCR2() {
 		NumberFormat f = NumberFormat.getInstance();
