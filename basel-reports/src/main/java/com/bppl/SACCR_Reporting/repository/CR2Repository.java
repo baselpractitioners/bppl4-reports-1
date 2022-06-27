@@ -1,9 +1,5 @@
 package com.bppl.SACCR_Reporting.repository;
 
-import java.sql.Date;
-import java.util.List;
-
-import javax.persistence.Id;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -12,6 +8,8 @@ import org.springframework.data.repository.CrudRepository;
 import com.bppl.SACCR_Reporting.model.CR2;
 
 public interface CR2Repository extends CrudRepository<CR2, Integer>{
+	
+	// All queries required to get aggregate values that are to be put into reports
 
 	//CR1
 	//1a

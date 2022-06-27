@@ -1,11 +1,8 @@
 package com.bppl.SACCR_Reporting.model;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-// import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -15,7 +12,7 @@ import lombok.Data;
 @Data
 public class reports_template {
 	
-	// all doubles are (23, 5)
+	// all doubles are Numbers(23, 5) in sql
 	
 	@Id
 	private int Id;
