@@ -3,9 +3,9 @@ package com.bppl.SACCR_Reporting.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bppl.SACCR_Reporting.model.CR2;
+import com.bppl.SACCR_Reporting.model.CR10;
 import com.bppl.SACCR_Reporting.model.reports_template;
-import com.bppl.SACCR_Reporting.repository.CR2Repository;
+import com.bppl.SACCR_Reporting.repository.CR10Repository;
 import com.bppl.SACCR_Reporting.repository.reports_templateRepository;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class ReportingService {
 	
 
 	@Autowired
-	CR2Repository cr2_repository;
+	CR10Repository CR10_repository;
 
 	@Autowired
 	reports_templateRepository reports_template_repository;
@@ -34,7 +34,7 @@ public class ReportingService {
 		return res;
 	}
 	
-	// all data needed to fill report CR2 [row, col, val]
+	// all data needed to fill report CR10 [row, col, val]
 	public List<Object> get_CR2() {
 		List<Object> res = new ArrayList<Object>();
 		reports_template_repository.findByReportName("CR2").forEach(res::add);
@@ -46,11 +46,11 @@ public class ReportingService {
 	{
 		List<Double> res = new ArrayList<Double>();
 
-		res.add(cr2_repository.DebtDefalutedExposure());
-		res.add(cr2_repository.DebtNotDefalutedExposure());
-		res.add(cr2_repository.DebtAllowances());
-		res.add(cr2_repository.DebtAllocatedSpecific());
-		res.add(cr2_repository.DebtAllocatedGeneral());
+		res.add(CR10_repository.DebtDefalutedExposure());
+		res.add(CR10_repository.DebtNotDefalutedExposure());
+		res.add(CR10_repository.DebtAllowances());
+		res.add(CR10_repository.DebtAllocatedSpecific());
+		res.add(CR10_repository.DebtAllocatedGeneral());
 		res.add(0.0);
 		res.add(res.get(0) + res.get(1) - res.get(2));
 		
@@ -62,11 +62,11 @@ public class ReportingService {
 	{
 		List<Double> res = new ArrayList<Double>();
 
-		res.add(cr2_repository.OffBalanceDefaultedExposure());
-		res.add(cr2_repository.OffBalanceNotDefaultedExposure());
-		res.add(cr2_repository.OffBalanceAllowances());
-		res.add(cr2_repository.OffBalanceAllocatedSpecific());
-		res.add(cr2_repository.OffBalanceAllocatedGeneral());
+		res.add(CR10_repository.OffBalanceDefaultedExposure());
+		res.add(CR10_repository.OffBalanceNotDefaultedExposure());
+		res.add(CR10_repository.OffBalanceAllowances());
+		res.add(CR10_repository.OffBalanceAllocatedSpecific());
+		res.add(CR10_repository.OffBalanceAllocatedGeneral());
 		res.add(0.0);
 		res.add(res.get(0) + res.get(1) - res.get(2));
 		
@@ -78,11 +78,11 @@ public class ReportingService {
 	{
 		List<Double> res = new ArrayList<Double>();
 		
-		res.add(cr2_repository.LoansDefaultedExposure());
-		res.add(cr2_repository.LoansNotDefaultedExposure()); 
-		res.add(cr2_repository.LoansAllowances());
-		res.add(cr2_repository.LoansAllocatedSpecific());
-		res.add(cr2_repository.LoansAllocatedGeneral());
+		res.add(CR10_repository.LoansDefaultedExposure());
+		res.add(CR10_repository.LoansNotDefaultedExposure()); 
+		res.add(CR10_repository.LoansAllowances());
+		res.add(CR10_repository.LoansAllocatedSpecific());
+		res.add(CR10_repository.LoansAllocatedGeneral());
 		res.add(0.0);
 		res.add(res.get(0) + res.get(1) - res.get(2));
 	
@@ -93,11 +93,11 @@ public class ReportingService {
 	{
 		List<Double> res = new ArrayList<Double>();
 		
-		res.add(cr2_repository.DefaultedExpenditurePrevPeriod());
-		res.add(cr2_repository.DefaultedExpenditureCurPeriod());
-		res.add(cr2_repository.RetToNonDefaulted());
-		res.add(cr2_repository.AmountWriteOff());
-		res.add(cr2_repository.OtherChanges());
+		res.add(CR10_repository.DefaultedExpenditurePrevPeriod());
+		res.add(CR10_repository.DefaultedExpenditureCurPeriod());
+		res.add(CR10_repository.RetToNonDefaulted());
+		res.add(CR10_repository.AmountWriteOff());
+		res.add(CR10_repository.OtherChanges());
 		res.add(res.get(0) + res.get(1) - res.get(2) - res.get(3) + res.get(4));
 		
 		return res;
