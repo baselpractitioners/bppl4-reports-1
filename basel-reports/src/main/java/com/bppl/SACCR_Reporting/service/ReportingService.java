@@ -37,13 +37,13 @@ public class ReportingService {
 		reports_template_repository.findByReportName("CR2").forEach(res::add);
 		return res;
 	}
-	
+
 	public List<Object> get_CR3() {
 		List<Object> res = new ArrayList<Object>();
 		reports_template_repository.findByReportName("CR3").forEach(res::add);
 		return res;
 	}
-	
+
 	public List<Object> get_CR5() {
 		List<Object> res = new ArrayList<Object>();
 		reports_template_repository.findByReportName("CR5").forEach(res::add);
@@ -54,8 +54,16 @@ public class ReportingService {
 		List<Object> res = new ArrayList<Object>();
 		reports_template_repository.findByReportName("CR6").forEach(res::add);
 		return res;
-	}	
+	}
+
+	public List<Object> get_CR4() {
+		List<Object> res = new ArrayList<Object>();
+		reports_template_repository.findByReportName("CR4").forEach(res::add);
+		return res;
+	}
+
 	// intermediate function to get values
+	// functions to get values related to CR3
 	public List<Double> get_debt() {
 		List<Double> res = new ArrayList<Double>();
 
@@ -99,6 +107,7 @@ public class ReportingService {
 
 		return res;
 	}
+	// functions to get values related to CR6
 
 	public List<Double> get_org() {
 		List<Double> res = new ArrayList<Double>();
@@ -111,10 +120,9 @@ public class ReportingService {
 		res.add(CR10_repository.Org_6());
 		res.add(CR10_repository.Org_7());
 		res.add(CR10_repository.Org_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -132,10 +140,9 @@ public class ReportingService {
 		res.add(CR10_repository.Off_6());
 		res.add(CR10_repository.Off_7());
 		res.add(CR10_repository.Off_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -153,10 +160,9 @@ public class ReportingService {
 		res.add(CR10_repository.AvgCCF_6());
 		res.add(CR10_repository.AvgCCF_7());
 		res.add(CR10_repository.AvgCCF_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -174,10 +180,9 @@ public class ReportingService {
 		res.add(CR10_repository.ead_6());
 		res.add(CR10_repository.ead_7());
 		res.add(CR10_repository.ead_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -195,10 +200,9 @@ public class ReportingService {
 		res.add(CR10_repository.avgPD_6());
 		res.add(CR10_repository.avgPD_7());
 		res.add(CR10_repository.avgPD_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -216,10 +220,9 @@ public class ReportingService {
 		res.add(CR10_repository.obl_6());
 		res.add(CR10_repository.obl_7());
 		res.add(CR10_repository.obl_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -237,10 +240,9 @@ public class ReportingService {
 		res.add(CR10_repository.lgd_6());
 		res.add(CR10_repository.lgd_7());
 		res.add(CR10_repository.lgd_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -258,10 +260,9 @@ public class ReportingService {
 		res.add(CR10_repository.avg_mat_6());
 		res.add(CR10_repository.avg_mat_7());
 		res.add(CR10_repository.avg_mat_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -279,10 +280,9 @@ public class ReportingService {
 		res.add(CR10_repository.rwa_6());
 		res.add(CR10_repository.rwa_7());
 		res.add(CR10_repository.rwa_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -300,10 +300,9 @@ public class ReportingService {
 		res.add(CR10_repository.rwa_den_6());
 		res.add(CR10_repository.rwa_den_7());
 		res.add(CR10_repository.rwa_den_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -321,10 +320,9 @@ public class ReportingService {
 		res.add(CR10_repository.loss_6());
 		res.add(CR10_repository.loss_7());
 		res.add(CR10_repository.loss_8());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) + res.get(2) + res.get(3) + res.get(4) + res.get(5) + res.get(6) + res.get(7));
 
@@ -346,58 +344,53 @@ public class ReportingService {
 		res.add(CR10_repository.RetToNonDefaulted());
 		res.add(CR10_repository.AmountWriteOff());
 		res.add(CR10_repository.OtherChanges());
-		for(int i =0;i<res.size();i++)
-		{
-			if(res.get(i)==null)
-				res.set(i,0.0);
+		for (int i = 0; i < res.size(); i++) {
+			if (res.get(i) == null)
+				res.set(i, 0.0);
 		}
 		res.add(res.get(0) + res.get(1) - res.get(2) - res.get(3) + res.get(4));
-		
+
 		return res;
 	}
-	
-	public List<Double> getLoans()
-	{
+
+	public List<Double> getLoans() {
 		List<Double> res = new ArrayList<Double>();
-		
+
 		res.add(CR10_repository.LoansExposuresUnsecured());
 		res.add(CR10_repository.LoansExposuresSecured());
 		res.add(CR10_repository.LoansExposuresSecuredCollateral());
 		res.add(CR10_repository.LoansExposuresSecuredFinancialGuarantees());
 		res.add(CR10_repository.LoansExposuresSecuredCreditDerivatives());
-		
+
 		return res;
 	}
-	
-	public List<Double> getDebtSecurities()
-	{
+
+	public List<Double> getDebtSecurities() {
 		List<Double> res = new ArrayList<Double>();
-		
+
 		res.add(CR10_repository.DebtSecuritiesExposuresUnsecured());
 		res.add(CR10_repository.DebtSecuritiesExposuresSecured());
 		res.add(CR10_repository.DebtSecuritiesExposuresSecuredCollateral());
 		res.add(CR10_repository.DebtSecuritiesExposuresSecuredFinancialGuarantees());
 		res.add(CR10_repository.DebtSecuritiesExposuresSecuredCreditDerivatives());
-		
+
 		return res;
 	}
-	
-	public List<Double> getOfWhichDefaulted()
-	{
+
+	public List<Double> getOfWhichDefaulted() {
 		List<Double> res = new ArrayList<Double>();
-		
+
 		res.add(CR10_repository.OfDefaultedExposuresUnsecured());
 		res.add(CR10_repository.OfDefaultedExposuresSecured());
 		res.add(CR10_repository.OfDefaultedExposuresSecuredCollaterals());
 		res.add(CR10_repository.OfDefaultedExposuresSecuredFinancialGuarantees());
 		res.add(CR10_repository.OfDefaultedExposuresSecuredCreditDerivatives());
-		
+
 		return res;
 	}
-	
-	//functions to get values related to CR5
-	public List<Double> get_Sovereigns()
-	{
+
+	// functions to get values related to CR5
+	public List<Double> get_Sovereigns() {
 		List<Double> res = new ArrayList<Double>();
 		System.out.println(CR10_repository.Sovereigs0());
 		res.add(CR10_repository.Sovereigs0());
@@ -410,13 +403,12 @@ public class ReportingService {
 		res.add(CR10_repository.Sovereigs150());
 		res.add(CR10_repository.SovereigsOthers());
 		res.add(CR10_repository.SovereigsTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_NonCentralGov()
-	{
+
+	public List<Double> get_NonCentralGov() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.NonCentralGov0());
@@ -429,13 +421,12 @@ public class ReportingService {
 		res.add(CR10_repository.NonCentralGov150());
 		res.add(CR10_repository.NonCentralGovOthers());
 		res.add(CR10_repository.NonCentralGovTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_MultilateralDevBanks()
-	{
+
+	public List<Double> get_MultilateralDevBanks() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.MultilateralDevBanks0());
@@ -448,13 +439,12 @@ public class ReportingService {
 		res.add(CR10_repository.MultilateralDevBanks150());
 		res.add(CR10_repository.MultilateralDevBanksOthers());
 		res.add(CR10_repository.MultilateralDevBanksTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_Banks()
-	{
+
+	public List<Double> get_Banks() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.Banks0());
@@ -467,13 +457,12 @@ public class ReportingService {
 		res.add(CR10_repository.Banks150());
 		res.add(CR10_repository.BanksOthers());
 		res.add(CR10_repository.BanksTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_SecurityFirms()
-	{
+
+	public List<Double> get_SecurityFirms() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.SecurityFirms0());
@@ -486,13 +475,12 @@ public class ReportingService {
 		res.add(CR10_repository.SecurityFirms150());
 		res.add(CR10_repository.SecurityFirmsOthers());
 		res.add(CR10_repository.SecurityFirmsTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_Corporates()
-	{
+
+	public List<Double> get_Corporates() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.Corporates0());
@@ -505,13 +493,12 @@ public class ReportingService {
 		res.add(CR10_repository.Corporates150());
 		res.add(CR10_repository.CorporatesOthers());
 		res.add(CR10_repository.CorporatesTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_RegulatoryRetailPortfolio()
-	{
+
+	public List<Double> get_RegulatoryRetailPortfolio() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.RegulatoryRetailPortfolio0());
@@ -524,13 +511,12 @@ public class ReportingService {
 		res.add(CR10_repository.RegulatoryRetailPortfolio150());
 		res.add(CR10_repository.RegulatoryRetailPortfolioOthers());
 		res.add(CR10_repository.RegulatoryRetailPortfolioTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_SecByResidentialProperty()
-	{
+
+	public List<Double> get_SecByResidentialProperty() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.SecByResidentialProperty0());
@@ -543,13 +529,12 @@ public class ReportingService {
 		res.add(CR10_repository.SecByResidentialProperty150());
 		res.add(CR10_repository.SecByResidentialPropertyOthers());
 		res.add(CR10_repository.SecByResidentialPropertyTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_SecByCommercialRealEstate()
-	{
+
+	public List<Double> get_SecByCommercialRealEstate() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.SecByCommercialRealEstate0());
@@ -562,13 +547,12 @@ public class ReportingService {
 		res.add(CR10_repository.SecByCommercialRealEstate150());
 		res.add(CR10_repository.SecByCommercialRealEstateOthers());
 		res.add(CR10_repository.SecByCommercialRealEstateTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_Equity()
-	{
+
+	public List<Double> get_Equity() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.Equity0());
@@ -581,13 +565,12 @@ public class ReportingService {
 		res.add(CR10_repository.Equity150());
 		res.add(CR10_repository.EquityOthers());
 		res.add(CR10_repository.EquityTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_PastDueLoans()
-	{
+
+	public List<Double> get_PastDueLoans() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.PastDueLoans0());
@@ -600,13 +583,12 @@ public class ReportingService {
 		res.add(CR10_repository.PastDueLoans150());
 		res.add(CR10_repository.PastDueLoansOthers());
 		res.add(CR10_repository.PastDueLoansTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_HigherRisk()
-	{
+
+	public List<Double> get_HigherRisk() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.HigherRisk0());
@@ -619,13 +601,12 @@ public class ReportingService {
 		res.add(CR10_repository.HigherRisk150());
 		res.add(CR10_repository.HigherRiskOthers());
 		res.add(CR10_repository.HigherRiskTotal());
-		
+
 		return res;
-		
+
 	}
-	
-	public List<Double> get_OtherAssets()
-	{
+
+	public List<Double> get_OtherAssets() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.OtherAssets0());
@@ -638,14 +619,12 @@ public class ReportingService {
 		res.add(CR10_repository.OtherAssets150());
 		res.add(CR10_repository.OtherAssetsOthers());
 		res.add(CR10_repository.OtherAssetsTotal());
-		
-		return res;
-		
-	}
-	
 
-	public List<Double> calc_cr5()
-	{
+		return res;
+
+	}
+
+	public List<Double> calc_cr5() {
 		List<Double> res = new ArrayList<Double>();
 
 		res.add(CR10_repository.Total0());
@@ -658,10 +637,194 @@ public class ReportingService {
 		res.add(CR10_repository.Total150());
 		res.add(CR10_repository.TotalOthers());
 		res.add(CR10_repository.Total_Tot());
-		
+
 		return res;
-		
+
 	}
+
+	// functions to get values related to CR4
+	public List<Double> get_SovereignsCentralBanks() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.SOV_CRM_On());
+		res.add(CR10_repository.SOV_CRM_Off());
+		res.add(CR10_repository.SOV_CCF_On());
+		res.add(CR10_repository.SOV_CCF_Off());
+		res.add(CR10_repository.SOV_RWA());
+		res.add(CR10_repository.SOV_RWA_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_NonCentralGovernment() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Non_Cen_CCF_On());
+		res.add(CR10_repository.Non_Cen_CCF_Off());
+		res.add(CR10_repository.Non_Cen_CRM_Off());
+		res.add(CR10_repository.Non_Cen_CCF_Off());
+		res.add(CR10_repository.Non_Cen_CCF_Off());
+		res.add(CR10_repository.Non_Cen_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_MultilateralDev() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Multi_CRM_On());
+		res.add(CR10_repository.Multi_CRM_Off());
+		res.add(CR10_repository.Multi_CCF_On());
+		res.add(CR10_repository.Multi_Off());
+		res.add(CR10_repository.Multi_RWA());
+		res.add(CR10_repository.Multi_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_banks() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Banks_CRM_On());
+		res.add(CR10_repository.Banks_CRM_Off());
+		res.add(CR10_repository.Banks_CCF_On());
+		res.add(CR10_repository.Banks_CCF_Off());
+		res.add(CR10_repository.Banks_RWA());
+		res.add(CR10_repository.Banks_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_securityFirms() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Sec_Firms_CRM_On());
+		res.add(CR10_repository.Sec_Firms_CRM_Off());
+		res.add(CR10_repository.Sec_Firms_CCF_Off());
+		res.add(CR10_repository.Sec_Firms_CCF_Off());
+		res.add(CR10_repository.Sec_Firms_RWA());
+		res.add(CR10_repository.Sec_Firms_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_corporates() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Corps_CRM_On());
+		res.add(CR10_repository.Corps_CRM_Off());
+		res.add(CR10_repository.Corps_CCF_On());
+		res.add(CR10_repository.Corps_CCF_Off());
+		res.add(CR10_repository.Corps_RWA());
+		res.add(CR10_repository.Corps_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_regulatoryretail() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Reg_CRM_On());
+		res.add(CR10_repository.Reg_CRM_Off());
+		res.add(CR10_repository.Reg_CCF_On());
+		res.add(CR10_repository.Reg_CCF_Off());
+		res.add(CR10_repository.Reg_RWA());
+		res.add(CR10_repository.Reg_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_securedResProperty() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Res_CRM_On());
+		res.add(CR10_repository.Res_CRM_Off());
+		res.add(CR10_repository.Res_CCF_On());
+		res.add(CR10_repository.sec_Res_Off());
+		res.add(CR10_repository.sec_Res_RWA());
+		res.add(CR10_repository.sec_Res_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_commercialRealEstate() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Sec_Com_CRM_On());
+		res.add(CR10_repository.Sec_ComCRMM_Off());
+		res.add(CR10_repository.Sec_Com_CCF_On());
+		res.add(CR10_repository.sec_Com_Off());
+		res.add(CR10_repository.sec_Com_RWA());
+		res.add(CR10_repository.sec_Com_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_equity() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.eqi_CRM_On());
+		res.add(CR10_repository.eqi_CRM_Off());
+		res.add(CR10_repository.eqi_CCF_On());
+		res.add(CR10_repository.eqi_Off());
+		res.add(CR10_repository.eqi_RWA());
+		res.add(CR10_repository.eqi_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_pastDueLoans() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Past_due_CRM_On());
+		res.add(CR10_repository.Past_due_CRM_Off());
+		res.add(CR10_repository.Past_due_CCF_On());
+		res.add(CR10_repository.past_due_Off());
+		res.add(CR10_repository.past_due_RWA());
+		res.add(CR10_repository.past_due_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_HighRiskCategories() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.High_Risk_CRM_On());
+		res.add(CR10_repository.High_Risk_CR_Off());
+		res.add(CR10_repository.High_Risk_CCF_On());
+		res.add(CR10_repository.high_risk_Off());
+		res.add(CR10_repository.high_risk_RWA());
+		res.add(CR10_repository.high_risk_Den());
+
+		return res;
+
+	}
+
+	public List<Double> get_otherAssets() {
+		List<Double> res = new ArrayList<Double>();
+
+		res.add(CR10_repository.Others_CRM_On());
+		res.add(CR10_repository.Others_CRM_Off());
+		res.add(CR10_repository.Others_CCF_On());
+		res.add(CR10_repository.other_Assets_Off());
+		res.add(CR10_repository.other_Assets_RWA());
+		res.add(CR10_repository.other_Assets_Den());
+
+		return res;
+
+	}
+
 	// updates reports_template table with updated aggregates CR1
 	public void updateTableCR1(Integer row, Integer col, String value) {
 		reports_template_repository.updateCR1(row, col, value);
@@ -671,18 +834,27 @@ public class ReportingService {
 	public void updateTableCR2(Integer row, Integer col, String value) {
 		reports_template_repository.updateCR2(row, col, value);
 	}
-	
-	public void updateTableCR3(Integer row, Integer col, String value)
-	{
+
+	public void updateTableCR3(Integer row, Integer col, String value) {
 		reports_template_repository.updateCR3(row, col, value);
 	}
-	
-	public void updateTableCR5(Integer row, Integer col, String value)
-	{
+
+	public void updateTableCR5(Integer row, Integer col, String value) {
 		reports_template_repository.updateCR5(row, col, value);
 	}
 
 	public void updateTableCR6(Integer row, Integer col, String value) {
 		reports_template_repository.updateCR6(row, col, value);
 	}
+
+	public void updateTableCR4(Integer row, Integer col, String value) {
+		reports_template_repository.updateCR4(row, col, value);
+
+	}
+
+	public void updateTableCR9(Integer row, Integer col, String value) {
+		reports_template_repository.updateCR9(row, col, value);
+
+	}
+
 }
