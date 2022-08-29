@@ -568,7 +568,7 @@ public class CR10 {
 	// all doubles are (23, 5)
 	@Id
 	private int Id;
-	@Column(name="BATCH_ID");
+	@Column(name="BATCH_ID")
 	private String BATCHID;
 	private Date PROCESS_DT;
 	private String ACCT_NUM;

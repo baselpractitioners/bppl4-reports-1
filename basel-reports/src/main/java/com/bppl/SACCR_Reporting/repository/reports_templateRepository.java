@@ -24,5 +24,15 @@ public interface reports_templateRepository extends CrudRepository<reports_templ
 	@Modifying
 	@Query("update reports_template set CellValue = ?3 where ReportName = 'CR2' and RowNumber = ?1 and ColumnNumber = ?2")
 	void updateCR2(Integer row, Integer col, String value);
+	
+	@Transactional
+	@Modifying
+	@Query("update reports_template set CellValue = ?3 where ReportName = 'CR3' and RowNumber = ?1 and ColumnNumber = ?2")
+	void updateCR3(Integer row, Integer col, String value);
+	
+	@Transactional
+	@Modifying
+	@Query("update reports_template set CellValue = ?3 where ReportName = 'CR5' and RowNumber = ?1 and ColumnNumber = ?2")
+	void updateCR5(Integer row, Integer col, String value);
 }
 
