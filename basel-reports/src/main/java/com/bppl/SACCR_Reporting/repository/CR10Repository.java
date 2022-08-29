@@ -222,35 +222,35 @@ public interface CR10Repository extends CrudRepository<CR10, Integer> {
 	Double ead_8();
 
 	// 16e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0015) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0015 group by PARTY_CD ) as temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0015) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0015 group by PARTY_CD ) as temp", nativeQuery = true)
 	Double avgPD_1();
 
 	// 17e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_2();
 
 	// 18e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_3();
 
 	// 19e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0075 AND PD_FINAL >= 0.005) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0075 AND PD_FINAL >= 0.005 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0075 AND PD_FINAL >= 0.005) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0075 AND PD_FINAL >= 0.005 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_4();
 
 	// 20e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075) from (select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075) from (select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_5();
 
 	// 21e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_6();
 
 	// 22e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_7();
 
 	// 23e
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL = 1) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL = 1 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL = 1) from(select (PD_FINAL * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL = 1 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avgPD_8();
 
 	// 16f
@@ -286,67 +286,67 @@ public interface CR10Repository extends CrudRepository<CR10, Integer> {
 	Double obl_8();
 
 	// 16g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0015) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0015 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0015) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0015 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_1();
 
 	// 17g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_2();
 
 	// 18g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_3();
 
 	// 19g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_4();
 
 	// 20g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_5();
 
 	// 21g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_6();
 
 	// 22g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_7();
 
 	// 23g
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL = 1) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL = 1 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL = 1) from(select (Effective_LGD * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL = 1 group by PARTY_CD ) temp", nativeQuery = true)
 	Double lgd_8();
 
 	// 16h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0015) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0015 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0015) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0015 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_1();
 
 	// 17h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0025 and PD_FINAL >=0.0015 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_2();
 
 	// 18h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.005 and PD_FINAL >=0.0025 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_3();
 
 	// 19h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.0075 and PD_FINAL >=0.005 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_4();
 
 	// 20h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.25 and PD_FINAL >=0.0075 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_5();
 
 	// 21h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 0.1 and PD_FINAL >=0.25 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_6();
 
 	// 22h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL < 1 and PD_FINAL >=0.1 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_7();
 
 	// 23h
-	@Query(value="Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL = 1) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL = 1 group by PARTY_CD ) temp", nativeQuery=true)
+	@Query(value = "Select Sum(temp.Calcu)/(select sum(IRB_NET_EAD) from CR10 where PD_FINAL = 1) from(select (IRB_MAT * IRB_NET_EAD ) Calcu from CR10 where PD_FINAL = 1 group by PARTY_CD ) temp", nativeQuery = true)
 	Double avg_mat_8();
 
 	// 16i
@@ -448,4 +448,8 @@ public interface CR10Repository extends CrudRepository<CR10, Integer> {
 	// 23l
 	@Query("Select sum(SPECIFIC_PROVISION_AMT+COLLECTIVE_PROVISION_AMT+ OTH_PROVISION_AMT) from CR10 where PD_FINAL = 1")
 	Double provisions_8();
+
+	// CR4
+	// 14d
+	
 }
