@@ -156,11 +156,13 @@ public class ReportingController {
 				Provisions.set(i,0.0);
 		}
 		Double sum = 0.0;
+		Double temp =0.0;
 		for(Integer i = 0; i < Original.size(); i++)
 		{
-			sum += Original.get(i) + Off_balance_sheet.get(i) + Average_CCF.get(i) + EAD.get(i) +Number_Of_Obilogors.get(i)+
+			temp += Original.get(i) + Off_balance_sheet.get(i) + Average_CCF.get(i) + EAD.get(i) +Number_Of_Obilogors.get(i)+
 			Average_PD.get(i) + Average_maturity.get(i) + RWA.get(i) + RWA_density.get(i) + Loss.get(i);
-			PortfolioX.add(sum);
+			sum += temp;
+			PortfolioX.add(temp);
 		}
 		PortfolioX.add(Provisions.get(0)+Provisions.get(1));
 		for(Integer i = 0; i < Original.size(); i++)
