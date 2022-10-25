@@ -31,6 +31,12 @@ public class ReportingService {
 		return res;
 	}
 
+	public List<Object> get_BatchID() {
+		List<Object> res = new ArrayList<Object>();
+		CR10_repository.get_all_batchIDs().forEach(res::add);
+		return res;
+	}
+
 	// all data needed to fill report CR10 [row, col, val]
 	public List<Object> get_CR2() {
 		List<Object> res = new ArrayList<Object>();

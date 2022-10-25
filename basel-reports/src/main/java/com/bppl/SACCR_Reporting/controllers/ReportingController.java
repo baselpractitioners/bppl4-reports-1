@@ -35,6 +35,13 @@ public class ReportingController {
 		return res;
 	}
 
+	@GetMapping("/get_Batches")
+	public List<Object> get_Batches() {
+
+		List<Object> res = reportingService.get_BatchID();
+		return res;
+	}
+
 	// more reports will be added here with /reportname
 	@GetMapping("/CR3")
 	public List<Object> get_CR3() {

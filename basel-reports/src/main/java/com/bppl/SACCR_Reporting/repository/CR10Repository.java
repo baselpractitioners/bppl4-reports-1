@@ -2,7 +2,7 @@ package com.bppl.SACCR_Reporting.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-
+import java.util.ArrayList;
 // tables required
 import com.bppl.SACCR_Reporting.model.CR10;
 
@@ -1249,4 +1249,8 @@ public interface CR10Repository extends CrudRepository<CR10, Integer> {
 	// 26f
 	@Query("select sum(RWA_DENSITY) from CR10 where BASEL_EXPOSURE_CLASS_CD = 'OTHER ASSETS'")
 	Double other_Assets_Den();
+
+	//get all batchIDs
+	@Query("select distinct BATCHID from CR10")
+	ArrayList<String> get_all_batchIDs();
 }
