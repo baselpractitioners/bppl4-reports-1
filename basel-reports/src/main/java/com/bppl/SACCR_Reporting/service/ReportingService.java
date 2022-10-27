@@ -68,6 +68,18 @@ public class ReportingService {
 		return res;
 	}
 
+	public void insert_to_temp(ArrayList<String> IDs)
+	{
+		for (Integer i = 0; i < IDs.size(); i++) {
+			CR10_repository.insert_to_Temp(IDs.get(i));
+		}
+	}
+
+	public void delete_temp()
+	{
+		CR10_repository.delete_from_temp();
+	}
+
 	// intermediate function to get values
 	// functions to get values related to CR3
 	public List<Double> get_debt() {

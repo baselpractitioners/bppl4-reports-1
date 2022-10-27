@@ -71,6 +71,11 @@ public class ReportingController {
 		return res;
 	}
 
+	@RequestMapping(path="/pop_tempCR", method = RequestMethod.POST)
+	public void pop_tempCR(@RequestParam("IDs") ArrayList<String> IDs) {
+		reportingService.insert_to_temp(IDs);
+	}
+
 	// SECTION 2 - update report data in intermediary table
 	// update values in reports_template [intermediary table] table for report - cr1
 	@PostMapping("/updateCR1")
@@ -91,6 +96,7 @@ public class ReportingController {
 					f.format(resLoan.get(i) + resDebt.get(i) + resOffBalance.get(i)));
 		}
 		;
+		reportingService.delete_temp();
 	}
 
 	@PostMapping("/updateCR6")
@@ -197,6 +203,7 @@ public class ReportingController {
 				reportingService.updateTableCR6(16 + i, 15, f.format(Provisions.get(0)));
 		}
 		;
+		reportingService.delete_temp();
 	}
 
 	// update values in reports_template [intermediary table] table for report - cr2
@@ -213,6 +220,7 @@ public class ReportingController {
 			reportingService.updateTableCR2(13 + i, 4, f.format(res.get(i)));
 		}
 		;
+		reportingService.delete_temp();
 	}
 
 	@PostMapping("/updateCR3")
@@ -232,6 +240,7 @@ public class ReportingController {
 			reportingService.updateTableCR3(17, 4 + i, f.format(resOfDefaulted.get(i)));
 		}
 		;
+		reportingService.delete_temp();
 	}
 
 	@PostMapping("/updateCR5")
@@ -312,6 +321,7 @@ public class ReportingController {
 							+ resPDL.get(i) + resHRC.get(i) + resOthers.get(i)));
 		}
 		;
+		reportingService.delete_temp();
 	}
 
 	@PostMapping("/updateCR4")
@@ -392,6 +402,7 @@ public class ReportingController {
 							+ resPDL.get(i) + resHRC.get(i) + resOthers.get(i)));
 		}
 		;
+		reportingService.delete_temp();
 	
 		}
 
